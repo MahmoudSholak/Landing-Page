@@ -1,0 +1,398 @@
+/* ---- Base Rules ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(136, 203, 171);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+  font-family: "Merriweather", serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Typeography General*/
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 3em;
+  margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em) {
+  h1 {
+    font-size: 7em;
+    margin: 1em 4rem 1em;
+  }
+}
+
+h2 {
+  border-bottom: 1px solid #cc1;
+  font-family: "Oxygen", Sans-Serif;
+  font-size: 3em;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6em;
+  color: #eee;
+}
+
+/* ---- Layout Rules ---- */
+/* The container that contain all elemnts in page */
+.container {
+  width: 100%;
+  padding-right: 1em;
+  padding-left: 1em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Some media queries to control in dimensions of container in different screens to make website Responsive */
+
+/* Small Screen  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium Screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large Screen  */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+main {
+  padding: 10vh 1em 10vh;
+}
+
+.main-hero {
+  min-height: 40vh;
+  padding-top: 3em;
+}
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
+/* ---- Module Rules ---- */
+
+/* -------------------- Start Navigation Styles -------------------- */
+.page__header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page__header .logo {
+  width: 30%;
+  position: relative;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.navbar__menu {
+  width: 70%;
+}
+
+#navbar__list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.navbar__menu li {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+}
+
+.navbar__menu .menu__link {
+  padding: 1em 0.5em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar__menu .menu__link:hover {
+  background: #385b6a;
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
+/* Link Active Style */
+.active-link {
+  background: rgb(136, 203, 171);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+}
+
+/* Responsive Navigation Bar */
+.page__header .icons {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* Style the shape of icons in mobile screen */
+  .page__header .container .icons span {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: #000;
+    transition: all 0.3s;
+  }
+  .page__header .container .icons:hover {
+    cursor: pointer;
+  }
+  .page__header .icons {
+    display: block;
+  }
+  /* Style the shape of navigation bar in mobile screen */
+  .page__header #navbar__list {
+    position: absolute;
+    right: 0;
+    top: 31px;
+    width: 50%;
+    height: calc(100vh - 31px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .page__header #navbar__list .menu__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page__header #navbar__list li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-bottom: 2px solid #ddd;
+  }
+}
+
+/* Some animation to the icon when click on it and it will run by js code */
+.page__header #navbar__list.active-links {
+  transform: translateX(0%);
+}
+.icons span:nth-child(1).show-icon {
+  transform: rotate(-90deg) translate(-7px, 0px);
+}
+.icons span:nth-child(2).show-icon {
+  transform: rotate(-90deg) translate(-1px, 5px);
+}
+.icons span:nth-child(3).show-icon {
+  transform: rotate(-90deg) translate(5px, 10px);
+}
+/* -------------------- End Navigation Styles -------------------- */
+
+/* Header Styles */
+.page__header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding-left: 2em;
+  padding-right: 2em;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 5;
+}
+
+/* Footer Styles */
+.page__footer {
+  padding: 2em;
+  background: #000;
+  color: #fff;
+}
+
+.page__footer p {
+  color: #fff;
+}
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+  padding: 1em;
+  text-align: left;
+}
+
+@media only screen and (min-width: 35em) {
+  .landing__container {
+    max-width: 50em;
+    padding: 4em;
+  }
+}
+.landing__container p {
+  margin-bottom: 1em;
+}
+section:nth-of-type(even) .landing__container {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Background Circles */
+/* Background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.187);
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+section.your-active-class {
+  border-radius: 2em;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+section.your-active-class .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.your-active-class .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+/* Start Scroll To Top Button*/
+/* Should be fixed position and disappear in start because we at the top of page and if we scroll it appear smoothly to the page */
+/* Controls in appear & disappear by js */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #03113f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  transform: translateX(calc(100% + 1em));
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.scroll-to-top:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Scroll to top Active Style */
+.scroll-to-top.show-scroll {
+  transform: translateX(0);
+}
