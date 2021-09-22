@@ -1,5 +1,5 @@
 # Landing-Page (Dynamic & Responsive)
-## First project of FWD course for web development (Proffesional Track)
+## First project of FWD course for web development (Professional Track)
 ### Goals & Idea :
 - Responsive wensite.
 - Dynamic Navbar by js.
