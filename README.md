@@ -1,2 +1,2 @@
 # Landing-Page
-First project of FW
+First project of FWD course for web development
