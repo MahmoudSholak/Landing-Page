@@ -29,6 +29,6 @@ using the structure of fwd from Github and adding some elements like:
 4. Fourth : Responsive Nav Bar icon.
    - control when the vertical navbar appear and disapper by click on the icon.
 5. Fifth : Top Scroll Button.
-   - Make the top scroll btn apper when window.scrolly > 700 and appear with small animation from the left.
+   - Make the top scroll btn apper when window.scrollY > 700 and appear with small animation from the left.
    - Make the scroll when click smooth.
 6. Finally : when i test the website i notice that when the screen at **mobile viewport** and the **icon is open** when i click in the window or scroll the vertical nav & icon doesn't close so i added another function to fix that and now when the icon is open and you click or scroll in window the icon and vertical nav close. 
